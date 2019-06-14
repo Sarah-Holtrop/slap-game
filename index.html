@@ -1,3 +1,5 @@
+<!--Actually do part 1 and 2, learning part 3 on Monday, but try it-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +8,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="game.css">
 </head>
 
 <body>
+  <header>
+    <div class="container d-flex justify-contents-center">
+      <div class="row ">
+        <div class="col-12 text-center">
+          <h1>Farm Fight</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row">
+        <!--COMPUTER-->
+        <div class="col">
+          <h3>Health: <span id="target-health"></span></h3>
+          <h3>Hits: <span id="target-hits"></span></h3>
+          <h3>Name: <span id="target-name"></span></h3>
+          <img src="/images/chicken.jpg" alt="placeholder chicken" style="width:200px; height:200px;">
+          <div class="row">
+            <button class="btn btn-success" onclick="computerFight('slap')">Slap</button>
+            <button class="btn btn-warning" onclick="computerFight('punch')">Punch</button>
+            <button class="btn btn-danger" onclick="computerFight('kick')">Kick</button>
+          </div>
+          <div class="row">
+            <button class="btn btn-secondary" onclick="giveDouble(1)">Double Attack</button>
+            <button class="btn btn-dark" onclick="giveShield(1)">Shield</button>
+            <button class="btn btn-secondary" onclick="giveRock(1)">Rock</button>
+          </div>
+        </div>
+        <!--PLAYER 1-->
+        <div class="col">
+          <h3> Health : <span id="player-one-health"></span></h3>
+          <h3>Hits: <span id="player-one-hits"></span></h3>
+          <h3>Name: <span id="player-one-name"></span></h3>
+          <img src="/images/goat.jpg" alt="placeholder goat" style="width:200px; height:200px;">
+          <div class="row">
+            <button class="btn btn-success" onclick="playerOneFight('slap')">Slap</button>
+            <button class="btn btn-warning" onclick="playerOneFight('punch')">Punch</button>
+            <button class="btn btn-danger" onclick="playerOneFight('kick')">Kick</button>
+          </div>
+          <div class="row">
+            <button class="btn btn-secondary" onclick="giveDouble(0)">Double Attack</button>
+            <button class="btn btn-dark" onclick="giveShield(0)">Shield</button>
+            <button class="btn btn-secondary" onclick="giveRock(0)">Rock</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+  </footer>
 
+
+  <script src="game.js"></script>
 </body>
 
 </html>
