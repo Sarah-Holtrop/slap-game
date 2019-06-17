@@ -1,12 +1,12 @@
 let players = [
   {
-    name: "Player One",
+    name: "Rattata",
     health: 100,
     hits: 0,
     items: []
   },
   {
-    name: "Computer",
+    name: "Pidgey",
     health: 100,
     hits: 0,
     items: []
@@ -22,91 +22,81 @@ let items = {
 function giveDouble(index) {
   let player = players[index];
   player.items.push(items.double);
-  console.log(player)
 }
 function giveShield(index) {
   let player = players[index];
   player.items.push(items.shield);
-  console.log(player)
 }
 function giveRock(index) {
   let player = players[index];
   player.items.push(items.rock);
-  console.log(player)
 }
 
-function addMods() {
+function playerOneAddMods() {
   let player = players[0];
-  // let computer = players[1];
-  let mod = player.items[0];
-  let modTotal = 0;
+  let modTotal = 1;
   for (let i = 0; i < player.items.length; i++) {
+    let mod = player.items[i].modifier;
     modTotal += mod;
-    return modTotal;
   }
-  player.health -= modTotal * mod
-  console.log(modTotal)
+  player.items = [];
+  return modTotal;
 }
 
-function fight(fight) {
+function playerTwoAddMods() {
+  let playerTwo = players[1];
+  let modTotal = 1;
+  for (let i = 0; i < playerTwo.items.length; i++) {
+    let mod = playerTwo.items[i].modifier;
+    modTotal += mod;
+  }
+  playerTwo.items = [];
+  return modTotal;
+}
+
+function playerTwoFight(fight) {
   let playerOne = players[0];
   if (fight == "slap") {
-    playerOne.health--;
+    playerOne.health -= 1 * playerTwoAddMods();
     playerOne.hits++;
     drawFight();
-    // if (playerOne.items[0] != " ") {
-    //   addMods();
-    //   playerOne.health = 1 * addMods()
-
-    // addMods();
-    // playerOne.health -= playerOne.health * 1;
-
-    // playerOne.health 
   } else if (fight == "punch") {
-    playerOne.health -= 5;
+    playerOne.health -= 5 * playerTwoAddMods();
     playerOne.hits++;
     drawFight();
-    // addMods();
-
   } else if (fight == "kick") {
-    playerOne.health -= 10;
+    playerOne.health -= 10 * playerTwoAddMods();
     playerOne.hits++;
     drawFight();
-    // addMods();
   }
-} //curly bracks are off
+}
 
-// function playerOneFight(fight) {
-//   let computer = players[1];
-//   if (fight == "slap") {
-//     computer.health--;
-//     computer.hits++;
-//     addMods()
-//     drawFight();
-//   } else if (fight == "punch") {
-//     computer.health -= 5;
-//     computer.hits++;
-//     addMods();
-//     drawFight();
-//   } else if (fight == "kick") {
-//     computer.health -= 10;
-//     computer.hits++;
-//     addMods();
-//     drawFight();
-//   }
-// }
-
+function playerOneFight(fight) {
+  let playerTwo = players[1];
+  if (fight == "slap") {
+    playerTwo.health -= 1 * playerOneAddMods();
+    playerTwo.hits++;
+    drawFight();
+  } else if (fight == "punch") {
+    playerTwo.health -= 5 * playerOneAddMods();
+    playerTwo.hits++;
+    drawFight();
+  } else if (fight == "kick") {
+    playerTwo.health -= 10 * playerOneAddMods();
+    playerTwo.hits++;
+    drawFight();
+  }
+}
 
 function drawFight() {
-  // let computer = players[1];
+  let playerTwo = players[1];
   let playerOne = players[0];
-  // document.querySelector("#target-health").innerHTML = computer.health.toString();
-  // document.querySelector("#target-hits").innerHTML = computer.hits.toString();
-  // document.querySelector("#target-name").innerHTML = computer.name
-  document.querySelector("#player-one-health").innerHTML = playerOne.health.toString();
+  document.querySelector("#target-health").innerHTML = playerTwo.health.toString();
+  document.querySelector("#target-hits").innerHTML = playerTwo.hits.toString();
+  document.querySelector("#target-name").innerHTML = playerTwo.name
+  document.querySelector("#player-one-health").innerHTML = playerOne.health.toString()
   document.querySelector("#player-one-hits").innerHTML = playerOne.hits.toString();
   document.querySelector("#player-one-name").innerHTML = playerOne.name;
 }
 
 drawFight()
-// addMods()

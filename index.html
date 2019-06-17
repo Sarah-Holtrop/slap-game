@@ -11,12 +11,14 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
 <body>
   <header>
-    <div class="container d-flex justify-contents-center">
-      <div class="row">
+    <div class="container">
+      <div class="row bg-info text-dark">
         <div class="col-12">
           <h1>Mini Battle</h1>
         </div>
@@ -26,40 +28,49 @@
   <main>
     <div class="container">
       <div class="row">
-        <!--COMPUTER-->
-        <!-- <div class="col">
-          <h3>Health: <span id="target-health"></span></h3>
-          <h3>Hits: <span id="target-hits"></span></h3>
-          <h3>Name: <span id="target-name"></span></h3>
-          <img src="/images/chicken.jpg" alt="placeholder chicken" style="width:200px; height:200px;">
-          <div class="row">
-            <button class="btn btn-success" onclick="computerFight('slap')">Slap</button>
-            <button class="btn btn-warning" onclick="computerFight('punch')">Punch</button>
-            <button class="btn btn-danger" onclick="computerFight('kick')">Kick</button>
-          </div>
-          <div class="row">
-            <button class="btn btn-secondary" onclick="giveDouble(1)">Double Attack</button>
-            <button class="btn btn-dark" onclick="giveShield(1)">Shield</button>
-            <button class="btn btn-secondary" onclick="giveRock(1)">Rock</button>
-          </div>
-        </div> -->
         <!--PLAYER 1-->
-        <div class="col">
-          <h3> Health : <span id="player-one-health"></span></h3>
-          <h3>Hits: <span id="player-one-hits"></span></h3>
-          <h3>Name: <span id="player-one-name"></span></h3>
-          <img src="/images/rattata.png" alt="rattata" style="width:200px; height:200px;">
-          <div class="row">
-            <button class="btn btn-success p-2 m-2" onclick="fight('slap')">Slap</button>
-            <button class="btn btn-warning p-2 m-2" onclick="fight('punch')">Punch</button>
-            <button class="btn btn-danger p-2 m-2" onclick="fight('kick')">Kick</button>
+        <div class="col-6 rat-bg">
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <h3> Health : <span id="player-one-health"></span></h3>
+            <h3>Hits: <span id="player-one-hits"></span></h3>
+            <h3>Name: <span id="player-one-name"></span></h3>
+            <img src="/images/rattataFaceRight.png" alt="rattata" style="width:200px; height:200px;">
           </div>
-          <div id="items" class="row">
-            <button class="btn btn-secondary p-2 m-2" onclick="giveDouble(0)">Double Attack</button>
-            <button class="btn btn-dark p-2 m-2" onclick="giveShield(0)">Shield</button>
-            <button class="btn btn-secondary p-2 m-2" onclick="giveRock(0)">Rock</button>
+          <div class="row justify-content-center">
+            <button class="btn btn-success p-2 m-2" onclick="playerOneFight('slap')">Tackle</button>
+            <button class="btn btn-warning p-2 m-2" onclick="playerOneFight('punch')">Quick Attack</button>
+            <button class="btn btn-danger p-2 m-2" onclick="playerOneFight('kick')">Hyper Fang</button>
           </div>
-          <!--should onclick be addMods() with giveDouble(0) within addMods() -->
+          <div id="items" class="row justify-content-center">
+            <button class="btn btn-secondary p-2 m-2" onclick="giveDouble(0)">Double Attack <span
+                class="fas fa-angle-double-up"></span></button>
+            <button class="btn btn-dark p-2 m-2" onclick="giveShield(0)">Shield <span
+                class="fas fa-shield-alt"></span></button>
+            <button class="btn btn-secondary p-2 m-2" onclick="giveRock(0)">Rock <span
+                class="fas fa-circle"></span></button>
+          </div>
+        </div>
+        <!--PLAYER 2-->
+        <div class="col-6 pidg-bg">
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <h3>Health: <span id="target-health"></span></h3>
+            <h3>Hits: <span id="target-hits"></span></h3>
+            <h3>Name: <span id="target-name"></span></h3>
+            <img src="/images/pidgeyFaceLeft.png" alt="pidgey" style="width:200px; height:200px;">
+          </div>
+          <div class="row justify-content-center">
+            <button class="btn btn-success p-2 m-2" onclick="playerTwoFight('slap')">Tackle</button>
+            <button class="btn btn-warning p-2 m-2" onclick="playerTwoFight('punch')">Gust</button>
+            <button class="btn btn-danger p-2 m-2" onclick="playerTwoFight('kick')">Wing Attack</button>
+          </div>
+          <div class="row justify-content-center">
+            <button class="btn btn-secondary p-2 m-2 " onclick="giveDouble(1)">Double Attack <span
+                class="fas fa-angle-double-up"></span></button>
+            <button class="btn btn-dark p-2 m-2" onclick="giveShield(1)">Shield <span
+                class="fas fa-shield-alt"></span></button>
+            <button class="btn btn-secondary p-2 m-2" onclick="giveRock(1)">Rock <span
+                class="fas fa-circle"></span></button>
+          </div>
         </div>
       </div>
     </div>
