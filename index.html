@@ -16,9 +16,9 @@
 <body>
   <header>
     <div class="container d-flex justify-contents-center">
-      <div class="row ">
-        <div class="col-12 text-center">
-          <h1>Farm Fight</h1>
+      <div class="row">
+        <div class="col-12">
+          <h1>Mini Battle</h1>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
     <div class="container">
       <div class="row">
         <!--COMPUTER-->
-        <div class="col">
+        <!-- <div class="col">
           <h3>Health: <span id="target-health"></span></h3>
           <h3>Hits: <span id="target-hits"></span></h3>
           <h3>Name: <span id="target-name"></span></h3>
@@ -42,22 +42,22 @@
             <button class="btn btn-dark" onclick="giveShield(1)">Shield</button>
             <button class="btn btn-secondary" onclick="giveRock(1)">Rock</button>
           </div>
-        </div>
+        </div> -->
         <!--PLAYER 1-->
         <div class="col">
           <h3> Health : <span id="player-one-health"></span></h3>
           <h3>Hits: <span id="player-one-hits"></span></h3>
           <h3>Name: <span id="player-one-name"></span></h3>
-          <img src="/images/goat.jpg" alt="placeholder goat" style="width:200px; height:200px;">
+          <img src="/images/rattata.png" alt="rattata" style="width:200px; height:200px;">
           <div class="row">
-            <button class="btn btn-success" onclick="playerOneFight('slap')">Slap</button>
-            <button class="btn btn-warning" onclick="playerOneFight('punch')">Punch</button>
-            <button class="btn btn-danger" onclick="playerOneFight('kick')">Kick</button>
+            <button class="btn btn-success p-2 m-2" onclick="fight('slap')">Slap</button>
+            <button class="btn btn-warning p-2 m-2" onclick="fight('punch')">Punch</button>
+            <button class="btn btn-danger p-2 m-2" onclick="fight('kick')">Kick</button>
           </div>
           <div id="items" class="row">
-            <button class="btn btn-secondary" onclick="giveDouble(0)">Double Attack</button>
-            <button class="btn btn-dark" onclick="giveShield(0)">Shield</button>
-            <button class="btn btn-secondary" onclick="giveRock(0)">Rock</button>
+            <button class="btn btn-secondary p-2 m-2" onclick="giveDouble(0)">Double Attack</button>
+            <button class="btn btn-dark p-2 m-2" onclick="giveShield(0)">Shield</button>
+            <button class="btn btn-secondary p-2 m-2" onclick="giveRock(0)">Rock</button>
           </div>
         </div>
       </div>
