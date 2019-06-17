@@ -53,21 +53,28 @@ function fight(fight) {
   if (fight == "slap") {
     playerOne.health--;
     playerOne.hits++;
-    playerOne.health -= playerOne.health + addMods();
     drawFight();
+    // if (playerOne.items[0] != " ") {
+    //   addMods();
+    //   playerOne.health = 1 * addMods()
+
     // addMods();
+    // playerOne.health -= playerOne.health * 1;
+
+    // playerOne.health 
   } else if (fight == "punch") {
     playerOne.health -= 5;
     playerOne.hits++;
     drawFight();
     // addMods();
+
   } else if (fight == "kick") {
     playerOne.health -= 10;
     playerOne.hits++;
     drawFight();
     // addMods();
   }
-}
+} //curly bracks are off
 
 // function playerOneFight(fight) {
 //   let computer = players[1];
@@ -102,4 +109,4 @@ function drawFight() {
 }
 
 drawFight()
-addMods()
+// addMods()
