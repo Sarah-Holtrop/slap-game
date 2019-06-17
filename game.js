@@ -35,6 +35,18 @@ function giveRock(index) {
   console.log(player)
 }
 
+function addMods() {
+  let player = players[0];
+  let computer = players[1];
+  let mod = player.items[0].modifier;
+  let modTotal = 0;
+  for (let i = 0; i < player.items.length; i++) {
+    modTotal += mod;
+    return modTotal;
+  }
+  computer.health -= modTotal * mod;
+}
+
 function computerFight(fight) {
   let playerOne = players[0];
   if (fight == "slap") {
@@ -57,14 +69,17 @@ function playerOneFight(fight) {
   if (fight == "slap") {
     computer.health--;
     computer.hits++;
+    addMods()
     drawFight();
   } else if (fight == "punch") {
     computer.health -= 5;
     computer.hits++;
+    addMods();
     drawFight();
   } else if (fight == "kick") {
     computer.health -= 10;
     computer.hits++;
+    addMods();
     drawFight();
   }
 }
